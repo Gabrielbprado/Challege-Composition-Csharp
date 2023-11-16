@@ -4,27 +4,32 @@ namespace ChallengeComposition.entites
     {
         Order order = new Order();       
 
-
-        public OrderItem(int quantity, double price,string name)
+        public Product Product { get; set; }
+        public OrderItem(int Quantity, double Price,string name)
         {
 
 
-            this.quantity = quantity;
-            this.price = price;
-            Product product = new Product(name,price);
+            this.Quantity = Quantity;
+            this.Price+= Price;
+            Product product = new Product(name,Price);
             order.AddItem(this);
         }
 
-        public int quantity { get; set; }
-        public double price {get;set;}
+        public int Quantity { get; set; }
+        public double Price {get;set;}
     
 
 
 
-        public double subTotal()
+        public double SubTotal()
         {
-            return price*=quantity;
+            return Price*Quantity;
 
+        }
+
+        public override string ToString()
+        {
+            return $"{Product.Name}, {Product.Price}, Quantity: {Quantity}, Subtotal: ${Product.Price}  ";
         }
 
     }

@@ -3,10 +3,10 @@ namespace ChallengeComposition.Entites.Enum
     enum OrderStatus : int
     {
 
-         PendingPayment = 0,
-         Processing = 1,
-         Shipped = 2,
-         Delivered = 3
+         pendingPayment = 0,
+         processing = 1,
+         shipped = 2,
+         delivered = 3
 
     }
 

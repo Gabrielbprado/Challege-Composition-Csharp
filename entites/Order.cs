@@ -1,3 +1,4 @@
+using System.Dynamic;
 using ChallengeComposition.Entites.Enum;
 
 namespace ChallengeComposition.entites
@@ -6,7 +7,8 @@ namespace ChallengeComposition.entites
     {
 
         DateTime Moment;
-        List<OrderItem> status = new List<OrderItem>();
+        public List<OrderItem> status {get;set;} = new List<OrderItem>(); 
+        public Client Client { get; set; }
 
         public void AddItem(OrderItem item)
         {
@@ -23,6 +25,8 @@ namespace ChallengeComposition.entites
             
             return 0;
         }
+
+      
 
     }
 

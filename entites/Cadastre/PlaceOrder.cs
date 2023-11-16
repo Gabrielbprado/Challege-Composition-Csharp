@@ -7,7 +7,8 @@ namespace ChallengeComposition.entites.Cadastre
 
     class PlaceOrder
     {
-        
+        OrderStatus status;
+        Order order = new Order();
         Client c {get;set;}
         public PlaceOrder()
         {
@@ -25,9 +26,9 @@ namespace ChallengeComposition.entites.Cadastre
             Console.WriteLine("Birth Date: (DD/MM/YYYY):");
             DateTime.TryParse(Console.ReadLine(), out DateTime Birth);
             Console.WriteLine("Enter order data");
-            Console.Write("Status:");
-            OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
-            Console.Write("How many item to this order ?");
+            Console.Write("Status PendingPayment, Processing, Shipped, Delivered: ");
+            Enum.TryParse<OrderStatus>(Console.ReadLine().ToLower(), out status);
+            Console.Write("How many item to this order ?: ");
               int.TryParse(Console.ReadLine(), out  int item);
             Client c =  new Client(Birth,Name,Email);
             this.c = c;
@@ -40,14 +41,13 @@ namespace ChallengeComposition.entites.Cadastre
                  for(int i = 1;i<=item;i++)
                 {
                     Console.WriteLine($"Enter #{i} Data: ");
-                    Console.Write("Product Name:");
+                    Console.Write("Product Name: ");
                     string Productname = Console.ReadLine() ?? "Undefined";
                     Console.Write("Product Price: ");
                     double ProductPrice = double.Parse(Console.ReadLine());
-                    Console.Write("Quantity");
+                    Console.Write("Quantity: ");
                     int quantity = int.Parse(Console.ReadLine());
                     OrderItem orderItem = new OrderItem(quantity,ProductPrice,Productname);
-                    Order order = new Order();
                     
                     order.AddItem(orderItem);
                     
@@ -61,13 +61,23 @@ namespace ChallengeComposition.entites.Cadastre
             {
                 
                 Console.WriteLine("ORDER SUMMARY:");
-                Console.Write($"Order Moment: {DateTime.Now}");
-                Console.WriteLine($"Order status: aaa");
+                Console.WriteLine($"Order Moment: {DateTime.Now.ToString("dd/MM/yyyy")}");
+                Console.WriteLine($"Order status: {status.ToString()}");
                 Console.WriteLine($"Client: {c.Name} {c.BirthDate.ToString("dd/MM/yyyy")} - {c.Email}");
                 Console.WriteLine("Order Items");
+                SearchingItems();
+                 }
 
+                 void SearchingItems()
+                 {
+                    foreach(OrderItem item in order.status)
+                    {
+                        Console.WriteLine(item.ToString());
 
-            }
+                    }
+
+                 }
+
 
     }
 
