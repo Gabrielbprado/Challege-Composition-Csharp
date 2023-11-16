@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using ChallengeComposition.Entites.Enum;
 
 namespace ChallengeComposition.entites.Cadastre
 {
@@ -7,21 +8,24 @@ namespace ChallengeComposition.entites.Cadastre
     class PlaceOrder
     {
         int item = 0;
+    
+
         public void Cadastre()
         {
 
             Console.WriteLine("Enter Cliente Data: ");
             Console.Write("Name:");
-            string name = Console.ReadLine() ?? "Usuer";
+            string Name = Console.ReadLine() ?? "Usuer";
             Console.Write("Email:");
-            string email = Console.ReadLine() ?? "Email Generic";
+            string Email = Console.ReadLine() ?? "Email Generic";
             Console.WriteLine("Birth Date: (DD/MM/YYYY):");
             DateTime.TryParse(Console.ReadLine(), out DateTime Birth);
             Console.WriteLine("Enter order data");
             Console.Write("Status:");
-            string status = Console.ReadLine() ?? "Undefined";
+            OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
             Console.Write("How many item to this order ?");
               int.TryParse(Console.ReadLine(), out  item);
+             new Client(Birth,Name,Email);
         }
 
             void Order()
@@ -35,12 +39,17 @@ namespace ChallengeComposition.entites.Cadastre
                     double ProductPrice = double.Parse(Console.ReadLine());
                     Console.Write("Quantity");
                     int quantity = int.Parse(Console.ReadLine());
+                    new OrderItem(quantity,ProductPrice,Productname);
+                    
                 }
 
             }
 
             void Sumary()
             {
+                
+                Console.WriteLine("ORDER SUMMARY:");
+                Console.Write($"Order Moment: {DateTime.Now}");
                 
 
             }
