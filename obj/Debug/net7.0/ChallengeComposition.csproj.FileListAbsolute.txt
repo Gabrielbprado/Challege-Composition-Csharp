@@ -1,0 +1,4 @@
+D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.GeneratedMSBuildEditorConfig.editorconfig
+D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.AssemblyInfoInputs.cache
+D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.AssemblyInfo.cs
+D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.csproj.CoreCompileInputs.cache
