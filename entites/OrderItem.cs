@@ -2,8 +2,9 @@ namespace ChallengeComposition.entites
 {
     class OrderItem
     {
-        Order order = new Order();       
-
+               
+           public int Quantity { get; set; }
+        public double Price {get;set;}
         public Product Product { get; set; }
         public OrderItem(int Quantity, double Price,string name)
         {
@@ -11,15 +12,9 @@ namespace ChallengeComposition.entites
 
             this.Quantity = Quantity;
             this.Price+= Price;
-            Product product = new Product(name,Price);
-            order.AddItem(this);
+            Product = new Product(name,Price);
+          
         }
-
-        public int Quantity { get; set; }
-        public double Price {get;set;}
-    
-
-
 
         public double SubTotal()
         {
