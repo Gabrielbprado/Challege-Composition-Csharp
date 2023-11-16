@@ -74,7 +74,7 @@ namespace ChallengeComposition.entites.Cadastre
                         Console.WriteLine(item.ToString());
 
                     }
-                  Console.WriteLine($"Total Pice: ${orderItem.SubTotal().ToString()} ");
+                
 
                  }
 
