@@ -7,10 +7,14 @@ namespace ChallengeComposition.entites.Cadastre
 
     class PlaceOrder
     {
-        int item = 0;
-    
+        
+        Client c {get;set;}
+        public PlaceOrder()
+        {
+            Cadastre();
 
-        public void Cadastre()
+        }
+        private void Cadastre()
         {
 
             Console.WriteLine("Enter Cliente Data: ");
@@ -24,11 +28,14 @@ namespace ChallengeComposition.entites.Cadastre
             Console.Write("Status:");
             OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
             Console.Write("How many item to this order ?");
-              int.TryParse(Console.ReadLine(), out  item);
-             new Client(Birth,Name,Email);
+              int.TryParse(Console.ReadLine(), out  int item);
+            Client c =  new Client(Birth,Name,Email);
+            this.c = c;
+             AddOrder(item);
+            
         }
 
-            void Order()
+            void AddOrder(int item)
             {
                  for(int i = 1;i<=item;i++)
                 {
@@ -39,9 +46,14 @@ namespace ChallengeComposition.entites.Cadastre
                     double ProductPrice = double.Parse(Console.ReadLine());
                     Console.Write("Quantity");
                     int quantity = int.Parse(Console.ReadLine());
-                    new OrderItem(quantity,ProductPrice,Productname);
+                    OrderItem orderItem = new OrderItem(quantity,ProductPrice,Productname);
+                    Order order = new Order();
+                    
+                    order.AddItem(orderItem);
+                    
                     
                 }
+                Sumary();
 
             }
 
@@ -50,10 +62,13 @@ namespace ChallengeComposition.entites.Cadastre
                 
                 Console.WriteLine("ORDER SUMMARY:");
                 Console.Write($"Order Moment: {DateTime.Now}");
-                
+                Console.WriteLine($"Order status: aaa");
+                Console.WriteLine($"Client: {c.Name} {c.BirthDate.ToString("dd/MM/yyyy")} - {c.Email}");
+                Console.WriteLine("Order Items");
+
 
             }
 
     }
 
-}
+} 

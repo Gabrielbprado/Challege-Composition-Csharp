@@ -14,6 +14,10 @@ namespace ChallengeComposition.entites
             this.Email = Email;
             this.Name = Name;
         }
+        public Client()
+        {
+            
+        }
 
        
     }

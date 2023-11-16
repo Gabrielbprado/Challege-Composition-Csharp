@@ -2,3 +2,13 @@ D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.GeneratedMSBuildEd
 D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.AssemblyInfoInputs.cache
 D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.AssemblyInfo.cs
 D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.csproj.CoreCompileInputs.cache
+D:\ChallengeComposition\bin\Debug\net7.0\ChallengeComposition.exe
+D:\ChallengeComposition\bin\Debug\net7.0\ChallengeComposition.deps.json
+D:\ChallengeComposition\bin\Debug\net7.0\ChallengeComposition.runtimeconfig.json
+D:\ChallengeComposition\bin\Debug\net7.0\ChallengeComposition.dll
+D:\ChallengeComposition\bin\Debug\net7.0\ChallengeComposition.pdb
+D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.dll
+D:\ChallengeComposition\obj\Debug\net7.0\refint\ChallengeComposition.dll
+D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.pdb
+D:\ChallengeComposition\obj\Debug\net7.0\ChallengeComposition.genruntimeconfig.cache
+D:\ChallengeComposition\obj\Debug\net7.0\ref\ChallengeComposition.dll
