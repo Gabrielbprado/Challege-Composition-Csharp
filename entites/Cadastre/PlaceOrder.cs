@@ -10,6 +10,7 @@ namespace ChallengeComposition.entites.Cadastre
         OrderStatus status;
         Order order = new Order();
         Client c {get;set;}
+        OrderItem orderItem;
         public PlaceOrder()
         {
             Cadastre();
@@ -47,7 +48,7 @@ namespace ChallengeComposition.entites.Cadastre
                     double ProductPrice = double.Parse(Console.ReadLine());
                     Console.Write("Quantity: ");
                     int quantity = int.Parse(Console.ReadLine());
-                    OrderItem orderItem = new OrderItem(quantity,ProductPrice,Productname);
+                     orderItem = new OrderItem(quantity,ProductPrice,Productname);
                     
                     order.AddItem(orderItem);
                     
@@ -75,6 +76,7 @@ namespace ChallengeComposition.entites.Cadastre
                         Console.WriteLine(item.ToString());
 
                     }
+                   // Console.WriteLine($"Total Pice: ${orderItem.SubTotal} ");
 
                  }
 
