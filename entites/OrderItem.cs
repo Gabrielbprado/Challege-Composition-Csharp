@@ -11,7 +11,7 @@ namespace ChallengeComposition.entites
 
 
             this.Quantity = Quantity;
-            this.Price+= Price;
+            this.Price = Price;
             Product = new Product(name,Price);
           
         }
@@ -24,7 +24,7 @@ namespace ChallengeComposition.entites
 
         public override string ToString()
         {
-            return $"{Product.Name}, {Product.Price}, Quantity: {Quantity}, Subtotal: ${Product.Price}  ";
+            return $"{Product.Name}, {Product.Price}, Quantity: {Quantity}, Subtotal: ${SubTotal().ToString()}  ";
         }
 
     }
